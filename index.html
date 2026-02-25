@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="scroll-behavior:smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
 }
 
 body{
-  background:#f5f1e8;
+  background: linear-gradient(to bottom, #f5f1e8, #eae3d2);
   color:#2e2e2e;
   line-height:1.7;
 }
@@ -38,6 +38,11 @@ nav a{
   margin-left:20px;
   font-size:14px;
   letter-spacing:1px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  opacity:0.6;
 }
 
 /* HERO */
@@ -67,6 +72,12 @@ nav a{
   width:200px;
   margin-top:40px;
   border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:transform 0.4s ease;
+}
+
+.profile-img:hover{
+  transform:scale(1.05);
 }
 
 .btn{
@@ -90,6 +101,18 @@ nav a{
 .section{
   padding:120px 20px;
   text-align:center;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .section h2{
@@ -112,6 +135,12 @@ nav a{
 .about-image img{
   width:240px;
   border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:transform 0.4s ease;
+}
+
+.about-image img:hover{
+  transform:scale(1.05);
 }
 
 .about-text{
@@ -149,6 +178,29 @@ nav a{
   height:450px;
   object-fit:cover;
   border-radius:6px;
+}
+
+/* CONTACT */
+.contact-box{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  max-width:500px;
+  margin:30px auto 0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  font-size:18px;
+  line-height:2;
+}
+
+.contact-box a{
+  color:#2e2e2e;
+  text-decoration:none;
+  border-bottom:1px solid #2e2e2e;
+  transition:0.3s ease;
+}
+
+.contact-box a:hover{
+  letter-spacing:1px;
 }
 
 /* FOOTER */
@@ -193,6 +245,7 @@ footer{
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#editing">Editing</a>
+    <a href="#contact">Contact</a>
     <a href="Addanki_Sai_Navadeep_Professional_Resume.pdf" download>Resume</a>
   </div>
 </nav>
@@ -201,10 +254,10 @@ footer{
 <section class="hero">
   <h1>Addanki Sai Navadeep</h1>
   <p>
-    Final Year Computer Science (AI) Student aspiring to build scalable and meaningful software solutions.
+    I design and build modern web applications with clean UI,
+    strong logic, and scalable architecture.
   </p>
   <img src="navadeep.jpg" class="profile-img">
-
   <a href="Addanki_Sai_Navadeep_Professional_Resume.pdf" download class="btn">
     Download Resume
   </a>
@@ -232,7 +285,6 @@ footer{
 <!-- SKILLS -->
 <section class="section" id="skills">
   <h2>Skills</h2>
-
   <div class="skills-list">
     <strong>Technical Skills:</strong><br>
     HTML • CSS • JavaScript • React • MySQL • Git & GitHub • AWS (Basics)<br><br>
@@ -248,7 +300,6 @@ footer{
 <!-- EDITING -->
 <section class="section" id="editing">
   <h2>Cinematic Editing (Side Skill)</h2>
-
   <div class="reels-grid">
     <div class="reel-card">
       <video controls src="reel1.mp4"></video>
@@ -259,6 +310,17 @@ footer{
     <div class="reel-card">
       <video controls src="reel3.mp4"></video>
     </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    📧 Email:
+    <a href="mailto:sainavadeepaddankiii@gmail.com">sainavadeepaddankiii@gmail.com</a><br>
+    📸 Instagram:
+    <a href="https://instagram.com/yourusername" target="_blank">@navadeepthunderbolt</a>
   </div>
 </section>
 
