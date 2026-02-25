@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior:smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Addanki Sai Navadeep</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-  scroll-behavior:smooth;
+  font-family:Georgia, serif;
 }
 
 body{
-  background:#f9fafb;
-  color:#1f2937;
+  background: linear-gradient(to bottom, #f5f1e8, #eae3d2);
+  color:#2e2e2e;
   line-height:1.7;
 }
 
@@ -27,34 +24,30 @@ nav{
   position:fixed;
   width:100%;
   top:0;
-  padding:20px 8%;
-  background:white;
+  padding:20px 60px;
+  background:rgba(245,241,232,0.95);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   z-index:1000;
-}
-
-nav h3{
-  font-weight:600;
 }
 
 nav a{
   text-decoration:none;
-  color:#1f2937;
-  margin-left:25px;
+  color:#2e2e2e;
+  margin-left:20px;
   font-size:14px;
+  letter-spacing:1px;
   transition:0.3s;
 }
 
 nav a:hover{
-  color:#2563eb;
+  opacity:0.6;
 }
 
 /* HERO */
 .hero{
-  min-height:100vh;
+  height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -65,26 +58,22 @@ nav a:hover{
 
 .hero h1{
   font-size:48px;
-  font-weight:600;
-}
-
-.hero span{
-  color:#2563eb;
+  font-weight:400;
+  margin-bottom:15px;
 }
 
 .hero p{
-  max-width:600px;
-  margin-top:15px;
+  max-width:650px;
   font-size:18px;
-  color:#4b5563;
+  opacity:0.9;
 }
 
 .profile-img{
-  width:180px;
-  margin-top:35px;
-  border-radius:50%;
-  box-shadow:0 15px 35px rgba(0,0,0,0.1);
-  transition:0.3s;
+  width:200px;
+  margin-top:40px;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:transform 0.4s ease;
 }
 
 .profile-img:hover{
@@ -92,34 +81,50 @@ nav a:hover{
 }
 
 .btn{
+  display:inline-block;
   margin-top:30px;
-  padding:12px 28px;
-  background:#2563eb;
-  color:white;
+  padding:12px 30px;
+  border:1px solid #2e2e2e;
   text-decoration:none;
-  border-radius:6px;
+  color:#2e2e2e;
   font-size:14px;
-  transition:0.3s;
+  letter-spacing:1px;
+  transition:0.3s ease;
 }
 
 .btn:hover{
-  background:#1e40af;
+  background:#2e2e2e;
+  color:white;
 }
 
 /* SECTION */
 .section{
-  padding:120px 8%;
+  padding:120px 20px;
+  text-align:center;
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .section h2{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:50px;
-  font-weight:600;
+  font-size:36px;
+  font-weight:400;
+  margin-bottom:40px;
 }
 
 /* ABOUT */
 .about-container{
+  max-width:1000px;
+  margin:auto;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -127,90 +132,106 @@ nav a:hover{
   flex-wrap:wrap;
 }
 
-.about-container img{
-  width:250px;
-  border-radius:12px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+.about-image img{
+  width:240px;
+  border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  transition:transform 0.4s ease;
+}
+
+.about-image img:hover{
+  transform:scale(1.05);
 }
 
 .about-text{
   max-width:500px;
-  font-size:17px;
-  color:#4b5563;
+  text-align:left;
+}
+
+.about-text p{
+  font-size:18px;
+  opacity:0.9;
 }
 
 /* SKILLS */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:30px;
-}
-
-.skill-card{
-  background:white;
-  padding:25px;
-  border-radius:10px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.skill-card h4{
-  margin-bottom:15px;
-  color:#2563eb;
+.skills-list{
+  max-width:900px;
+  margin:auto;
+  text-align:left;
+  line-height:2;
 }
 
 /* REELS */
 .reels-grid{
   display:flex;
   justify-content:center;
-  gap:30px;
+  gap:40px;
   flex-wrap:wrap;
 }
 
-.reel-card video{
+.reel-card{
   width:250px;
-  height:450px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  transition:0.3s;
 }
 
-.reel-card video:hover{
-  transform:scale(1.03);
+.reel-card video{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  border-radius:6px;
 }
 
 /* CONTACT */
 .contact-box{
-  max-width:500px;
-  margin:0 auto;
   background:white;
-  padding:40px;
-  border-radius:12px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.07);
+  padding:30px;
+  border-radius:10px;
+  max-width:500px;
+  margin:30px auto 0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  font-size:18px;
+  line-height:2;
 }
 
 .contact-box a{
-  display:block;
-  margin:15px 0;
+  color:#2e2e2e;
   text-decoration:none;
-  color:#2563eb;
-  font-weight:500;
+  border-bottom:1px solid #2e2e2e;
+  transition:0.3s ease;
+}
+
+.contact-box a:hover{
+  letter-spacing:1px;
 }
 
 /* FOOTER */
 footer{
-  padding:40px;
+  padding:60px 20px;
   text-align:center;
-  background:#111827;
-  color:white;
   font-size:14px;
+  background:#e8e2d3;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media(max-width:768px){
+  nav{
+    padding:15px 20px;
+  }
+
   .hero h1{
     font-size:32px;
+  }
+
+  .about-container{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .about-text{
+    text-align:center;
+  }
+
+  .skills-list{
+    text-align:center;
   }
 }
 </style>
@@ -219,21 +240,22 @@ footer{
 <body>
 
 <nav>
-  <h3>Sai Navadeep</h3>
+  <div>Sai Navadeep</div>
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#editing">Editing</a>
     <a href="#contact">Contact</a>
+    <a href="Addanki_Sai_Navadeep_Professional_Resume.pdf" download>Resume</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Hello, I'm <span>Sai Navadeep</span></h1>
+  <h1>Addanki Sai Navadeep</h1>
   <p>
-    Final Year Computer Science (AI) student building modern, scalable web applications 
-    with clean UI and strong technical foundations.
+    I design and build modern web applications with clean UI,
+    strong logic, and scalable architecture.
   </p>
   <img src="navadeep.jpg" class="profile-img">
   <a href="Addanki_Sai_Navadeep_Professional_Resume.pdf" download class="btn">
@@ -243,14 +265,19 @@ footer{
 
 <!-- ABOUT -->
 <section class="section" id="about">
-  <h2>About Me</h2>
   <div class="about-container">
-    <img src="navadeep.jpg" alt="Sai Navadeep">
+    <div class="about-image">
+      <img src="navadeep.jpg" alt="Sai Navadeep">
+    </div>
+
     <div class="about-text">
-      I am passionate about frontend development, cloud technologies, and AI.
-      I continuously improve my problem-solving skills and build projects to
-      strengthen my fundamentals. Alongside development, I enjoy cinematic
-      reel editing as a creative outlet.
+      <h2>About</h2>
+      <p>
+        I am a final year Computer Science (AI) student focused on strengthening
+        my foundation in frontend development and cloud technologies.
+        I continuously work on improving my problem-solving skills and technical knowledge.
+        Alongside development, I practice cinematic reel editing as a creative discipline.
+      </p>
     </div>
   </div>
 </section>
@@ -258,27 +285,21 @@ footer{
 <!-- SKILLS -->
 <section class="section" id="skills">
   <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Technical</h4>
-      HTML • CSS • JavaScript • React • MySQL • Git • AWS (Basics)
-    </div>
+  <div class="skills-list">
+    <strong>Technical Skills:</strong><br>
+    HTML • CSS • JavaScript • React • MySQL • Git & GitHub • AWS (Basics)<br><br>
 
-    <div class="skill-card">
-      <h4>Core Concepts</h4>
-      Data Structures • OOP • DBMS • Operating Systems • Computer Networks
-    </div>
+    <strong>Core Concepts:</strong><br>
+    Data Structures • OOP • DBMS • Computer Networks • Operating Systems<br><br>
 
-    <div class="skill-card">
-      <h4>Creative</h4>
-      Cinematic Reel Editing • PowerDirector • Music Sync • Transitions
-    </div>
+    <strong>Creative Skills (Side):</strong><br>
+    Cinematic Reel Editing • PowerDirector • Music Synchronization • Transition Design
   </div>
 </section>
 
 <!-- EDITING -->
 <section class="section" id="editing">
-  <h2>Cinematic Editing</h2>
+  <h2>Cinematic Editing (Side Skill)</h2>
   <div class="reels-grid">
     <div class="reel-card">
       <video controls src="reel1.mp4"></video>
@@ -296,20 +317,15 @@ footer{
 <section class="section" id="contact">
   <h2>Contact</h2>
   <div class="contact-box">
-    <a href="mailto:sainavadeepaddankiii@gmail.com">
-      📧 sainavadeepaddankiii@gmail.com
-    </a>
-
-    <a href="https://www.instagram.com/navadeepthunderbolt" 
-       target="_blank" 
-       rel="noopener noreferrer">
-      📸 @navadeepthunderbolt
-    </a>
+    📧 Email:
+    <a href="mailto:sainavadeepaddankiii@gmail.com">sainavadeepaddankiii@gmail.com</a><br>
+    📸 Instagram:
+    <a href="https://www.instagram.com/navadeepthunderbolt?igsh=dnZ4cXlhcm9qejFs" target="_blank">@navadeepthunderbolt</a>
   </div>
 </section>
 
 <footer>
-  © 2026 Addanki Sai Navadeep | All Rights Reserved
+  © 2026 Addanki Sai Navadeep
 </footer>
 
 </body>
