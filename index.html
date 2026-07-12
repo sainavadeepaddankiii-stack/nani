@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addanki Sai Navadeep | Portfolio</title>
+    <meta name="description" content="Portfolio of Addanki Sai Navadeep - Computer Science (AI) student, Frontend Developer, and Cinematic Reel Editor. Creating modern web applications with clean logic and scalable architecture.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Interactive Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-accent">&lt;</span>Navadeep<span class="logo-accent">/&gt;</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#editing" class="nav-item">Editing</a>
+                <a href="#contact" class="nav-item">Contact</a>
+                <a href="assets/navadeep_resume.pdf" download class="nav-btn-resume">
+                    <span>Resume</span>
+                    <i class="fa-solid fa-arrow-down-to-line"></i>
+                </a>
+            </nav>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Open Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer">
+        <nav class="mobile-nav-links">
+            <a href="#about" class="mobile-nav-item">About</a>
+            <a href="#skills" class="mobile-nav-item">Skills</a>
+            <a href="#editing" class="mobile-nav-item">Editing</a>
+            <a href="#contact" class="mobile-nav-item">Contact</a>
+            <a href="assets/navadeep_resume.pdf" download class="mobile-nav-btn">Download Resume</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="section-container hero-grid">
+                <div class="hero-content animate-reveal" data-delay="100">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        <span class="badge-text">Available for Opportunities</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="text-gradient">Addanki Sai Navadeep</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I design and build modern web applications with clean UI, strong logic, and scalable architecture. Focused on AI technologies, frontend development, and cloud services.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">
+                            <span>Get In Touch</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+                        <a href="assets/navadeep_resume.pdf" download class="btn-secondary">
+                            <span>Download CV</span>
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="mailto:sainavadeepaddankiii@gmail.com" class="social-link-icon" title="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/navadeepthunderbolt" target="_blank" rel="noopener" class="social-link-icon" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" rel="noopener" class="social-link-icon" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual animate-reveal" data-delay="300">
+                    <div class="image-perspective-container">
+                        <div class="image-card-wrapper" id="profile-card">
+                            <div class="card-glow"></div>
+                            <div class="image-inner-card">
+                                <img src="assets/navadeep.jpg" alt="Addanki Sai Navadeep" class="profile-img">
+                                <div class="profile-badge badge-ai">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <span>AI Developer</span>
+                                </div>
+                                <div class="profile-badge badge-edit">
+                                    <i class="fa-solid fa-film"></i>
+                                    <span>Video Editor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-indicator">
+                <span class="mouse-icon">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Background</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-image-column">
+                        <div class="about-img-frame">
+                            <img src="assets/navadeep.jpg" alt="Sai Navadeep Portrait" class="about-img">
+                        </div>
+                    </div>
+
+                    <div class="about-text-column">
+                        <h3 class="about-subtitle">Computer Science (AI) Student & Creator</h3>
+                        <p class="about-p">
+                            I am currently a final year Computer Science (AI) student. I focus heavily on strengthening my core foundation in frontend development and cloud technologies. I am constantly working to enhance my problem-solving skills and technical background.
+                        </p>
+                        <p class="about-p">
+                            Beyond standard computer science, I practice cinematic reel editing as a creative discipline. I enjoy combining strict logic and clean engineering with rich visuals, timing, and sound design. This background helps me bring a unique eye for visual layout, color harmony, and animations to the frontend code I write.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div class="highlight-info">
+                                    <h4>Final Year CS (AI)</h4>
+                                    <p>Academic Focus</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fa-solid fa-cloud"></i>
+                                </div>
+                                <div class="highlight-info">
+                                    <h4>Cloud Technologies</h4>
+                                    <p>AWS & Cloud Basics</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">
+                                    <i class="fa-solid fa-clapperboard"></i>
+                                </div>
+                                <div class="highlight-info">
+                                    <h4>Cinematic Editing</h4>
+                                    <p>Side Creative Discipline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Capabilities</span>
+                    <h2 class="section-title">Skills & Expertise</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Category 1: Frontend Development -->
+                    <div class="skills-category-card" data-glow-color="#3b82f6">
+                        <div class="category-header">
+                            <div class="category-icon dev-icon">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3>Frontend & Cloud</h3>
+                        </div>
+                        <p class="category-desc">Building modular, fast interfaces and integrating standard cloud architectures.</p>
+                        <div class="skills-badges">
+                            <span class="skill-badge" style="--badge-accent: #e34c26;"><i class="fa-brands fa-html5"></i> HTML5</span>
+                            <span class="skill-badge" style="--badge-accent: #264de4;"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-badge" style="--badge-accent: #f0db4f;"><i class="fa-brands fa-js"></i> JavaScript</span>
+                            <span class="skill-badge" style="--badge-accent: #61dbfb;"><i class="fa-brands fa-react"></i> React</span>
+                            <span class="skill-badge" style="--badge-accent: #00758f;"><i class="fa-solid fa-database"></i> MySQL</span>
+                            <span class="skill-badge" style="--badge-accent: #f05032;"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                            <span class="skill-badge" style="--badge-accent: #ff9900;"><i class="fa-brands fa-aws"></i> AWS (Basics)</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Core CS Concepts -->
+                    <div class="skills-category-card" data-glow-color="#a855f7">
+                        <div class="category-header">
+                            <div class="category-icon cs-icon">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3>Core Computer Science</h3>
+                        </div>
+                        <p class="category-desc">Strong understanding of computer theory, algorithms, and systematic operations.</p>
+                        <div class="skills-badges">
+                            <span class="skill-badge" style="--badge-accent: #10b981;"><i class="fa-solid fa-sitemap"></i> Data Structures</span>
+                            <span class="skill-badge" style="--badge-accent: #3b82f6;"><i class="fa-solid fa-cubes"></i> OOP Concepts</span>
+                            <span class="skill-badge" style="--badge-accent: #ec4899;"><i class="fa-solid fa-server"></i> DBMS</span>
+                            <span class="skill-badge" style="--badge-accent: #f43f5e;"><i class="fa-solid fa-network-wired"></i> Computer Networks</span>
+                            <span class="skill-badge" style="--badge-accent: #8b5cf6;"><i class="fa-solid fa-terminal"></i> Operating Systems</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Creative Video Editing -->
+                    <div class="skills-category-card" data-glow-color="#f43f5e">
+                        <div class="category-header">
+                            <div class="category-icon creative-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h3>Creative & Side Skills</h3>
+                        </div>
+                        <p class="category-desc">Dynamic timing, transitions, video formats, and aesthetic music synchronization.</p>
+                        <div class="skills-badges">
+                            <span class="skill-badge" style="--badge-accent: #ec4899;"><i class="fa-solid fa-film"></i> Reel Editing</span>
+                            <span class="skill-badge" style="--badge-accent: #3b82f6;"><i class="fa-solid fa-video"></i> PowerDirector</span>
+                            <span class="skill-badge" style="--badge-accent: #eab308;"><i class="fa-solid fa-music"></i> Music Sync</span>
+                            <span class="skill-badge" style="--badge-accent: #10b981;"><i class="fa-solid fa-sparkles"></i> Transition Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cinematic Editing Section -->
+        <section id="editing" class="editing-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Portfolio Showreel</span>
+                    <h2 class="section-title">Cinematic Editing</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <p class="section-subtitle-center">
+                    A selection of creative cinematic reels focusing on dynamic sound synchronization, motion control, and high-energy pacing. Click any reel to view in the premium media player.
+                </p>
+
+                <div class="reels-grid">
+                    <!-- Reel 1 Card -->
+                    <div class="reel-card" data-video-src="assets/reel1.mp4">
+                        <div class="reel-thumbnail-wrapper">
+                            <div class="reel-gradient-bg spec-gradient-1"></div>
+                            <div class="play-overlay">
+                                <div class="play-icon-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="reel-meta">
+                                <span class="reel-duration">Reel 01</span>
+                                <h3 class="reel-name">Cinematic Sound Synchronization</h3>
+                                <p class="reel-desc">Tuned beats matched with smooth cinematic camera movements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reel 2 Card -->
+                    <div class="reel-card" data-video-src="assets/reel2.mp4">
+                        <div class="reel-thumbnail-wrapper">
+                            <div class="reel-gradient-bg spec-gradient-2"></div>
+                            <div class="play-overlay">
+                                <div class="play-icon-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="reel-meta">
+                                <span class="reel-duration">Reel 02</span>
+                                <h3 class="reel-name">Dynamic Action Transitions</h3>
+                                <p class="reel-desc">High-speed cut combinations with directional blurring.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reel 3 Card -->
+                    <div class="reel-card" data-video-src="assets/reel3.mp4">
+                        <div class="reel-thumbnail-wrapper">
+                            <div class="reel-gradient-bg spec-gradient-3"></div>
+                            <div class="play-overlay">
+                                <div class="play-icon-circle">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="reel-meta">
+                                <span class="reel-duration">Reel 03</span>
+                                <h3 class="reel-name">Color Grading & Aesthetics</h3>
+                                <p class="reel-desc">Vibrant teal and orange color harmony presets and grading work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Get in Touch</span>
+                    <h2 class="section-title">Let's Connect</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Info Card -->
+                    <div class="contact-info-card">
+                        <h3>Interested in collaborating?</h3>
+                        <p class="contact-pitch">
+                            Whether it's web engineering projects, video editing assignments, or cloud setup discussions—I am always open to new ideas, remote collaborations, and networking. Drop a message!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="contact-item-details">
+                                    <span class="contact-label">Email Me</span>
+                                    <div class="email-copy-wrapper">
+                                        <a href="mailto:sainavadeepaddankiii@gmail.com" class="contact-value" id="email-text">sainavadeepaddankiii@gmail.com</a>
+                                        <button id="copy-email-btn" class="copy-btn" title="Copy Email Address">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                        <span id="copy-tooltip" class="copy-tooltip">Copied!</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Instagram -->
+                            <div class="contact-item">
+                                <div class="contact-item-icon">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <div class="contact-item-details">
+                                    <span class="contact-label">Instagram Direct</span>
+                                    <a href="https://www.instagram.com/navadeepthunderbolt" target="_blank" rel="noopener" class="contact-value highlight-value">@navadeepthunderbolt</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Contact Card -->
+                    <div class="contact-visual-card">
+                        <div class="contact-decoration-ring ring-1"></div>
+                        <div class="contact-decoration-ring ring-2"></div>
+                        <div class="contact-inner-card">
+                            <i class="fa-solid fa-paper-plane contact-paper-plane"></i>
+                            <h4>Send a direct mail</h4>
+                            <p>Click below to open your native mail composer instantly filled with my address.</p>
+                            <a href="mailto:sainavadeepaddankiii@gmail.com" class="btn-primary">
+                                <span>Compose Mail</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo-accent">&lt;</span>Navadeep<span class="logo-accent">/&gt;</span>
+            </div>
+            <p class="footer-copy">&copy; 2026 Addanki Sai Navadeep. Crafted with passion & visual precision.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#editing">Editing</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top-btn" aria-label="Scroll to top" title="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom Lightbox Video Player Modal -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-backdrop"></div>
+        <div class="modal-wrapper">
+            <button class="modal-close-btn" aria-label="Close Video">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="custom-player-container">
+                <video id="modal-video" src="" preload="metadata"></video>
+                
+                <!-- Custom Controls -->
+                <div class="player-controls">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-wrapper">
+                        <div class="progress-timeline" id="progress-timeline">
+                            <div class="progress-filled" id="progress-filled"></div>
+                            <div class="progress-hover-bar" id="progress-hover-bar"></div>
+                            <div class="progress-handle" id="progress-handle"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Controls Layout -->
+                    <div class="controls-main">
+                        <div class="controls-left">
+                            <button class="play-pause-btn" id="play-pause-btn" title="Play">
+                                <i class="fa-solid fa-play play-icon"></i>
+                                <i class="fa-solid fa-pause pause-icon"></i>
+                            </button>
+                            <div class="time-display">
+                                <span id="current-time">0:00</span>
+                                <span class="time-separator">/</span>
+                                <span id="total-duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="controls-right">
+                            <div class="volume-container">
+                                <button class="volume-btn" id="volume-btn" title="Mute">
+                                    <i class="fa-solid fa-volume-high volume-high-icon"></i>
+                                    <i class="fa-solid fa-volume-low volume-low-icon"></i>
+                                    <i class="fa-solid fa-volume-xmark volume-mute-icon"></i>
+                                </button>
+                                <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="1" title="Volume Slider">
+                            </div>
+                            
+                            <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Play Button (Only visible when paused) -->
+                <div class="central-play-trigger" id="central-play-trigger">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
