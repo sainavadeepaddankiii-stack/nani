@@ -895,7 +895,7 @@ section {
    ------------------------------------------------------------- */
 .reels-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
 }
 
@@ -904,12 +904,13 @@ section {
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     aspect-ratio: 9/16;
-    max-width: 350px;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
     cursor: pointer;
     background: var(--bg-tertiary);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--card-border);
+    transition: var(--transition-medium);
 }
 
 .reel-thumbnail-wrapper {
@@ -982,18 +983,27 @@ section {
     width: 100%;
     padding: 2rem;
     z-index: 4;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
     color: #ffffff;
+    backdrop-filter: blur(4px);
+    transition: var(--transition-medium);
 }
 
 .reel-duration {
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent-color);
+    letter-spacing: 0.15em;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    transition: var(--transition-medium);
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
+    text-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
 .reel-name {
@@ -1004,6 +1014,15 @@ section {
 .reel-desc {
     font-size: 0.85rem;
     color: #cbd5e1;
+}
+
+.reel-card:hover .reel-meta {
+    background: linear-gradient(to top, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 100%);
+}
+
+.reel-card:hover .reel-duration {
+    filter: drop-shadow(0 0 16px rgba(99, 102, 241, 0.8));
+    transform: scale(1.08);
 }
 
 /* Card Hover Interactions */
@@ -1650,6 +1669,10 @@ footer {
     .about-text-column {
         order: 2;
     }
+    
+    .reels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1716,6 +1739,16 @@ footer {
     .footer-container {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .reels-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .reel-card {
+        max-width: 100%;
+        margin: 0;
     }
 }
 
